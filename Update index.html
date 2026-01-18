@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Al Hind News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      background: #020617;
+    }
+    header h1 {
+      color: #ef4444;
+      font-size: 20px;
+    }
+    .search {
+      padding: 10px;
+    }
+    .search input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+    }
+    .welcome {
+      text-align: center;
+      padding: 15px;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 15px;
+    }
+    .menu div {
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .news {
+      padding: 15px;
+    }
+    .card {
+      background: #1e293b;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background: #020617;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Al Hind News</h1>
+  <span>👤</span>
+</header>
+
+<div class="search">
+  <input type="text" placeholder="Search news...">
+</div>
+
+<div class="welcome">
+  <h2>Welcome to Al Hind News</h2>
+  <p>Fast • Fearless • True</p>
+</div>
+
+<div class="menu">
+  <div>🏠 Home</div>
+  <div>📰 News</div>
+  <div>💬 Messages</div>
+  <div>👤 Profile</div>
+  <div onclick="shareApp()">📤 Share</div>
+</div>
+
+<div class="news">
+  <div class="card">🔴 Breaking News Headline</div>
+  <div class="card">🇮🇳 National News</div>
+  <div class="card">🌍 International News</div>
+</div>
+
+<div class="bottom-nav">
+  <span>Home</span>
+  <span>News</span>
+  <span>Messages</span>
+  <span>Profile</span>
+</div>
+
+<script>
+function shareApp() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Al Hind News',
+      text: 'Fast & Fearless News',
+      url: 'https://shariqgour6-byte.github.io/AL-Hind-News/'
+    });
+  } else {
+    alert("Share support nahi karta");
+  }
+}
+</script>
+
+</body>
+</html>
