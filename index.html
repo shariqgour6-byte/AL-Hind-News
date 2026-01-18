@@ -1,63 +1,95 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AL Hind News</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL Hind News | Professional Portal</title>
+    <style>
+        /* Basic Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f4f4; color: #333; }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        /* Top Header & Logo */
+        header { background: #b22222; color: white; padding: 20px; text-align: center; }
+        header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Inter, sans-serif;
-      background: #f5f5f5;
-    }
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .news {
-      padding: 15px;
-    }
-    .card {
-      background: white;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-  </style>
+        /* Breaking News Ticker */
+        .breaking-news { background: #000; color: yellow; padding: 10px; overflow: hidden; white-space: nowrap; }
+        .ticker { display: inline-block; animation: scroll 20s linear infinite; font-weight: bold; }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* Navigation */
+        nav { background: #333; display: flex; justify-content: center; padding: 10px; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: #ff4500; }
+
+        /* Main Container */
+        .container { max-width: 1200px; margin: 20px auto; padding: 20px; }
+
+        /* News Cards Grid */
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 15px; }
+        .card-content h3 { margin-bottom: 10px; color: #b22222; }
+        .card-content p { font-size: 0.9rem; line-height: 1.5; color: #666; }
+
+        /* Footer */
+        footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+    </style>
 </head>
-
 <body>
-  <header>📰 AL Hind News</header>
 
-  <div class="news" id="root"></div>
+    <header>
+        <h1>AL Hind News</h1>
+        <p>Sahi Khabar, Sabse Pehle</p>
+    </header>
 
-  <!-- React CDN -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <div class="breaking-news">
+        <div class="ticker">Breaking News: AL Hind News system is now live! | API Integration coming soon... | Stay tuned for real-time updates!</div>
+    </div>
 
-  <script>
-    const root = ReactDOM.createRoot(document.getElementById("root"));
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">India</a>
+        <a href="#">World</a>
+        <a href="#">Business</a>
+        <a href="#">Tech</a>
+    </nav>
 
-    function App() {
-      return React.createElement(
-        "div",
-        null,
-        React.createElement("div", { className: "card" }, "Breaking News: App successfully working ✅"),
-        React.createElement("div", { className: "card" }, "AL Hind News automatic system ready"),
-        React.createElement("div", { className: "card" }, "Next step: API news integration")
-      );
-    }
+    <div class="container">
+        <h2 style="margin-bottom: 20px; border-left: 5px solid #b22222; padding-left: 10px;">Top Headlines</h2>
+        
+        <div class="news-grid" id="news-container">
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200" alt="News Image">
+                <div class="card-content">
+                    <h3>News Heading 1</h3>
+                    <p>Yahan par news ki short description aayegi. Ye professional layout hai.</p>
+                </div>
+            </div>
 
-    root.render(React.createElement(App));
-  </script>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200" alt="News Image">
+                <div class="card-content">
+                    <h3>News Heading 2</h3>
+                    <p>Hamara system ab API integration ke liye ready hai.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200" alt="News Image">
+                <div class="card-content">
+                    <h3>News Heading 3</h3>
+                    <p>AL Hind News par aapko har tarah ki khabrein milengi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AL Hind News | Powered by Technology</p>
+    </footer>
+
 </body>
 </html>
