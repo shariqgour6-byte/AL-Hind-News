@@ -1,0 +1,4 @@
+ "name": "Al Hind News",
+  "description": "An automated AI-powered news aggregator featuring Al Jazeera, BBC, India Today, and more, with support for Hindi, English, Arabic, and Urdu.",
+  "requestFramePermissions": []
+}
