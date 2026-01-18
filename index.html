@@ -1,18 +1,169 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AL Hind News</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+<meta charset="UTF-8">
+<title>AL Hind News</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f3f4f6;
+}
+
+/* Welcome Screen */
+#welcome{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:#0b4ea2;
+  color:white;
+}
+#welcome h1{
+  font-size:30px;
+}
+#welcome p{
+  opacity:0.9;
+}
+#welcome button{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* Header */
+header{
+  background:#0b4ea2;
+  color:white;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+header h2{
+  margin:0;
+  font-size:20px;
+}
+.profile{
+  font-size:22px;
+}
+
+/* Search */
+.search{
+  padding:12px;
+}
+.search input{
+  width:100%;
+  padding:10px;
+  border-radius:20px;
+  border:1px solid #ddd;
+}
+
+/* News Cards */
+.container{
+  padding:12px;
+}
+.card{
+  background:white;
+  border-radius:12px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.card h3{
+  margin:0 0 8px;
+  font-size:18px;
+}
+.time{
+  font-size:13px;
+  color:#6b7280;
+}
+.read{
+  display:inline-block;
+  margin-top:8px;
+  color:#2563eb;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* Bottom Nav */
+nav{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#ffffff;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  border-top:1px solid #ddd;
+}
+nav span{
+  font-size:14px;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>AL Hind News</h1>
-        <button onclick="loadNews()">Refresh News</button>
-    </header>
-    <div id="news-container"></div>
-    <script src="app.js"></script>
+
+<!-- Welcome Screen -->
+<div id="welcome">
+  <h1>Welcome to AL Hind News</h1>
+  <p>Fast • Fearless • True</p>
+  <button onclick="openApp()">Enter App</button>
+</div>
+
+<!-- Home Page -->
+<div id="app" style="display:none">
+
+<header>
+  <h2>AL Hind News</h2>
+  <div class="profile">👤</div>
+</header>
+
+<div class="search">
+  <input type="text" placeholder="Search news...">
+</div>
+
+<div class="container">
+  <div class="card">
+    <h3>Mauni Amavasya 2026 Shubh Muhurat</h3>
+    <div class="time">2026-01-18 00:30</div>
+    <a class="read" href="#">Pura Padhein</a>
+  </div>
+
+  <div class="card">
+    <h3>बिहार सरकार देगी 2 लाख की मदद</h3>
+    <div class="time">2026-01-17 16:57</div>
+    <a class="read" href="#">Pura Padhein</a>
+  </div>
+
+  <div class="card">
+    <h3>DGCA Action on Indigo</h3>
+    <div class="time">2026-01-18 01:45</div>
+    <a class="read" href="#">Pura Padhein</a>
+  </div>
+</div>
+
+<nav>
+  <span>🏠 Home</span>
+  <span>💬 Messages</span>
+  <span>🔍 Search</span>
+  <span>👤 Profile</span>
+</nav>
+
+</div>
+
+<script>
+function openApp(){
+  document.getElementById("welcome").style.display="none";
+  document.getElementById("app").style.display="block";
+}
+</script>
+
 </body>
 </html>
